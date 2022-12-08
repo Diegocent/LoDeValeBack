@@ -56,13 +56,21 @@ exports.findOne = (req, res) => {
 // encontrar (de manera opcional cada uno) por ClienteId, UsuarioId
 exports.findAll = (req, res) => {
     const proveedor_id = req.query.ProveedorId;
+    const fecha_inicio = req.query.FechaInicio;
+    const fecha_fin = req.query.FechaFin;
 
     var condition = null;
 
     if(proveedor_id){
         condition = { ProveedorId: proveedor_id };
     }
-
+    if(fecha_inicio && fecha_fin){
+        condition={fecha: {
+            [Op.lte]: fecha_fin,
+            [Op.gte]: fecha_inicio
+          }
+    }
+}
 
     Compra.findAll({ include: [
             {
