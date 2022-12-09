@@ -17,7 +17,7 @@ db.sequelize.sync();
 //     origin: "http://localhost:4200"
 
 // };
-produccion
+//produccion
 var corsOptions = {
 
     origin: "http://lodevale-app.s3-website-us-east-1.amazonaws.com"
