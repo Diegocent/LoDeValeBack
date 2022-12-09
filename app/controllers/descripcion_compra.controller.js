@@ -45,7 +45,7 @@ exports.findOne = (req, res) => {
     DescripcionCompra.findByPk(id, {
         include: [
             {
-                model: db.Venta, as: 'Venta'
+                model: db.Compra, as: 'Compra'
                 // ,include: [{model: db.Producto, as: 'Producto'}] si quisiera buscar algo mas adentro usaria eso
             },
             {
@@ -87,7 +87,7 @@ exports.findAll = (req, res) => {
 
     DescripcionCompra.findAll({ include: [
             {
-                model: db.Venta, as: 'Venta',
+                model: db.Compra, as: 'Compra',
                 // include: [{model: db.Producto, as: 'Producto'}]
             },
             {
