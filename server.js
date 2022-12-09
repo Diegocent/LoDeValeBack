@@ -11,18 +11,18 @@ const db = require("./app/models");
 
 db.sequelize.sync();
 
-//desarrollo
-var corsOptions = {
-
-    origin: "http://localhost:4200"
-
-};
-//produccion
+// //desarrollo
 // var corsOptions = {
 
 //     origin: "http://localhost:4200"
 
 // };
+produccion
+var corsOptions = {
+
+    origin: "http://lodevale-app.s3-website-us-east-1.amazonaws.com"
+
+};
 
 app.use(cors(corsOptions));
 
