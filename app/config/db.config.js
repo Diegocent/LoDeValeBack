@@ -1,43 +1,17 @@
-// module.exports = {
-
-//     HOST: "localhost",
-
-//     USER: "postgres",
-
-//     PASSWORD: "postgres",
-
-//     PORT: 5432,
-
-//     DB: "lodevale",
-
-//     dialect: "postgres",
-
-//     pool: {
-
-//         max: 5,
-
-//         min: 0,
-
-//         acquire: 30000,
-
-//         idle: 10000
-
-//     }
-
-// };
 module.exports = {
 
-    HOST: "sql716.main-hosting.eu",
+    HOST: "localhost",
 
-    USER: "u592463271_LDVale",
+    USER: "postgres",
 
-    PASSWORD: "Admin.123",
+    PASSWORD: "postgres",
 
     PORT: 5432,
 
-    DB: "u592463271_LDVale",
+    DB: "lodevale",
 
-    dialect: "mysql",
+    dialect: "postgres",
+
     pool: {
 
         max: 5,

@@ -5,7 +5,7 @@ const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
     // Validate request
-    if (!req.body.UsuarioId) {
+    if (req.body.UsuarioId == null) {
         res.status(400).send({
             message: "Debe ingresar el id del usuario"
         });
