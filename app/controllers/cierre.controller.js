@@ -17,7 +17,8 @@ exports.create = (req, res) => {
         // total: req.body.total ? req.body.total : 0,  // si quiero poner como condicional se usa de esta manera para establecer por defecto
         monto_parcial: req.body.monto_parcial,
         monto_final: req.body.monto_final,
-        en_caja: req.body.en_caja
+        en_caja: req.body.en_caja,
+        fecha: req.body.fecha
     };
     // Guardamos a la base de datos
     Cierre.create(cierre)
@@ -56,12 +57,19 @@ exports.findOne = (req, res) => {
 // encontrar (de manera opcional cada uno) por ClienteId, UsuarioId
 exports.findAll = (req, res) => {
     const usuario_id = req.query.UsuarioId;
-
+    const fecha_inicio = req.query.FechaInicio;
+    const fecha_fin = req.query.FechaFin;
     var condition = null;
     if(usuario_id){
         condition = { UsuarioId: usuario_id };
     }
-
+    if(fecha_inicio && fecha_fin){
+        condition={fecha: {
+            [Op.lte]: fecha_fin,
+            [Op.gte]: fecha_inicio
+          }
+        }
+    }
     Cierre.findAll({ include: [
             {
                 model: db.Usuario, as: 'Usuario'

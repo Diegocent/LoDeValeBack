@@ -13,6 +13,9 @@ module.exports = (sequelize, Sequelize) => {
         },
         en_caja:{
             type: Sequelize.INTEGER,
+        },
+        fecha: {
+            type: Sequelize.DATE,
         }
     });
     return Cierre;
